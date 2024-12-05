@@ -19,7 +19,7 @@ Tab:AddLabel("Welcome to the Policeman Hub!")
 func:AddButton({
 	Name = "Noclip",
 	Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/L6Bi4MrA"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/aftermath-dev/aftermath-hubs/refs/heads/main/noclip"))()
       		print("Executed!")
   	end    
 })

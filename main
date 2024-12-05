@@ -12,7 +12,7 @@ Tab:AddToggle({
 	Name = "This is a toggle!",
 	Default = false,
 	Callback = function() 
-loadstring(game:HttpGet("https://pastebin.com/raw/fGf5c4Cw"))()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Noclip-5473"))()
 		print(Value)
 	end    
 })

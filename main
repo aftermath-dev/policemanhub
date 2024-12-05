@@ -1,0 +1,10 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/aftermath-dev/policemanhub/refs/heads/main/library')))()
+local Window = OrionLib:MakeWindow({Name = "Policeman Hub beta", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Tab = Window:MakeTab({
+	Name = "Test",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Sigma"
+})

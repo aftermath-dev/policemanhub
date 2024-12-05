@@ -5,14 +5,26 @@ local Tab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
+local func = Window:MakeTab({
+	Name = "Universal",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
 local Section = Tab:AddSection({
-	Name = "Sigma"
+	Name = "Main"
 })
-Tab:AddToggle({
-	Name = "This is a toggle!",
-	Default = false,
-	Callback = function() 
-loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Noclip-5473"))()
-		print(Value)
-	end    
+Tab:AddLabel("Welcome to the Policeman Hub!")
+
+Func:AddButton({
+	Name = "Noclip",
+	Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/L6Bi4MrA"))()
+      		print("Executed!")
+  	end    
 })
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]

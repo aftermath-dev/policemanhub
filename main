@@ -16,7 +16,7 @@ local Section = Tab:AddSection({
 })
 Tab:AddLabel("Welcome to the Policeman Hub!")
 
-Func:AddButton({
+func:AddButton({
 	Name = "Noclip",
 	Callback = function()
 loadstring(game:HttpGet("https://pastebin.com/raw/L6Bi4MrA"))()

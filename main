@@ -24,7 +24,16 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/aftermath-dev/afterma
   	end    
 })
 
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
+Tab:AddSlider({
+	Name = "Slider",
+	Min = 1,
+	Max = 500,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "bananas",
+	Callback = function(v)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+		print(executed)
+	end    
+})

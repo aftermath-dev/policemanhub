@@ -89,24 +89,3 @@ game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
    end,
 })
 
-func:AddButton({
-	Name = "Noclip",
-	Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/aftermath-dev/aftermath-hubs/refs/heads/main/noclip"))()
-      		print("Executed!")
-  	end    
-})
-
-Tab:AddSlider({
-	Name = "Slider",
-	Min = 1,
-	Max = 500,
-	Default = 16,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
-	ValueName = "bananas",
-	Callback = function(v)
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
-		print(executed)
-	end    
-})

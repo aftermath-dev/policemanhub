@@ -1,91 +1,179 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
 local Window = Rayfield:CreateWindow({
-   Name = "Policeman Hub V1 (beta)",
-   Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
-   LoadingTitle = "Policeman Hub",
-   LoadingSubtitle = "by Aftermath SPECIAL FOR POLICEMAN CLAN",
-   Theme = "{
-    TextColor = Color3.fromRGB(0, 0, 255),
-
-    Background = Color3.fromRGB(25, 25, 25),
-    Topbar = Color3.fromRGB(34, 34, 34),
-    Shadow = Color3.fromRGB(20, 20, 20),
-
-    NotificationBackground = Color3.fromRGB(20, 20, 20),
-    NotificationActionsBackground = Color3.fromRGB(230, 230, 230),
-
-    TabBackground = Color3.fromRGB(80, 80, 80),
-    TabStroke = Color3.fromRGB(85, 85, 85),
-    TabBackgroundSelected = Color3.fromRGB(210, 210, 210),
-    TabTextColor = Color3.fromRGB(240, 240, 240),
-    SelectedTabTextColor = Color3.fromRGB(50, 50, 50),
-
-    ElementBackground = Color3.fromRGB(35, 35, 35),
-    ElementBackgroundHover = Color3.fromRGB(40, 40, 40),
-    SecondaryElementBackground = Color3.fromRGB(25, 25, 25),
-    ElementStroke = Color3.fromRGB(50, 50, 50),
-    SecondaryElementStroke = Color3.fromRGB(40, 40, 40),
-            
-    SliderBackground = Color3.fromRGB(50, 138, 220),
-    SliderProgress = Color3.fromRGB(50, 138, 220),
-    SliderStroke = Color3.fromRGB(58, 163, 255),
-
-    ToggleBackground = Color3.fromRGB(30, 30, 30),
-    ToggleEnabled = Color3.fromRGB(0, 146, 214),
-    ToggleDisabled = Color3.fromRGB(100, 100, 100),
-    ToggleEnabledStroke = Color3.fromRGB(0, 170, 255),
-    ToggleDisabledStroke = Color3.fromRGB(125, 125, 125),
-    ToggleEnabledOuterStroke = Color3.fromRGB(100, 100, 100),
-    ToggleDisabledOuterStroke = Color3.fromRGB(65, 65, 65),
-
-    DropdownSelected = Color3.fromRGB(40, 40, 40),
-    DropdownUnselected = Color3.fromRGB(30, 30, 30),
-
-    InputBackground = Color3.fromRGB(30, 30, 30),
-    InputStroke = Color3.fromRGB(65, 65, 65),
-    PlaceholderColor = Color3.fromRGB(178, 178, 178)
-}",
-
-   DisableRayfieldPrompts = false,
-   DisableBuildWarnings = false,
-
+   Name = "Policeman Hub 1.0",
+   LoadingTitle = "waiting the script loading",
+   LoadingSubtitle = "by aftr.lua",
    ConfigurationSaving = {
-      Enabled = true,
+      Enabled = false,
       FolderName = nil, -- Create a custom folder for your hub/game
-      FileName = "Policeman Hub"
+      FileName = "pm Hub"
    },
-
    Discord = {
       Enabled = false,
-      Invite = "noinvitelink",
-      RememberJoins = true
+      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = false -- Set this to false to make them join the discord every time they load it up
    },
-
-   KeySystem = false,
+   KeySystem = true, -- Set this to true to use our key system
    KeySettings = {
-      Title = "Untitled",
-      Subtitle = "Key System",
-      Note = "No method of obtaining the key is provided",
-      FileName = "Key",
-      SaveKey = true,
-      GrabKeyFromSite = false, 
-      Key = {"Hello"}
+      Title = "Key | z4trox Hub",
+      Subtitle = "пруфани что ты не фантом ))0)",
+      Note = "ключ только для полисменов",
+      FileName = "ScriptHubKey1", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"https://pastebin.com/raw/vCrZt6kv"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
 })
 
-local Tab = Window:CreateTab("Policeman Hub", 4483362458)
+local ABOUTTab = Window:CreateTab("Home", nil) -- Title, Image
+local ABOUTSection = MainTab:CreateSection("About script")
 
-local Section = Tab:CreateSection("Functions")
+Rayfield:Notify({
+   Title = "Script Executed!",
+   Content = "U Execute The Script! cool GUI!",
+   Duration = 5,
+   Image = nil,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+         print("The user tapped Okay!")
+      end
+   },
+},
+})
 
-local Slider = Tab:CreateSlider({
-   Name = "Slider Example",
-   Range = {1, 500},
+local Label = ABOUTTab:CreateLabel("SCRIPT IS ON BETA AND CLOSED!!!", "rewind")
+
+local MainTab = Window:CreateTab("Character", nil)
+
+
+local Slider = MainTab:CreateSlider({
+   Name = "Walk Speed",
+   Range = {1, 350},
    Increment = 1,
-   Suffix = "Bananas",
+   Suffix = "Speed",
    CurrentValue = 16,
-   Flag = "Slider1",
-   Callback = function(v) 
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+   Flag = "sliderws", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
    end,
 })
+
+local Slider = MainTab:CreateSlider({
+   Name = "Jump Power",
+   Range = {1, 350},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 16,
+   Flag = "sliderjp", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = (Value)
+   end,
+})
+
+local AdminTab = Window:CreateTab("Admin Scripts and More", nil)
+
+local Button = AdminTab:CreateButton({
+   Name = "Infinite Yield",
+   Callback = function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Infinite-Yield_500"))()
+   end,
+})
+
+local Button = AdminTab:CreateButton({
+   Name = "System Broken",
+   Callback = function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Ragdoll-Engine-BEST-SCRIPT-WORKING-SystemBroken-7544"))()
+   end,
+})
+
+local Button = AdminTab:CreateButton({
+   Name = "PM (Policeman) Executor SPECIAL",
+   Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/sAVghM5x"))()
+   end,
+})
+
+local OtherTab = Window:CreateTab("Universal Cool Scripts", nil)
+
+local Button = OtherTab:CreateButton({
+   Name = "Chat Spy",
+   Callback = function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Chat-spy-3000"))()
+   end,
+})
+
+local Button = OtherTab:CreateButton({
+   Name = "Walk On Walls",
+   Callback = function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/The-patience-obby-Universal-Walk-on-walls-18129"))()
+   end,
+})
+
+local Button = OtherTab:CreateButton({
+   Name = "R6 script",
+   Callback = function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-R6-Animations-on-R15-16865"))()
+   end,
+})
+
+local Button = OtherTab:CreateButton({
+   Name = "Mobile Keyboard",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+   end,
+})
+
+local BrTab = Window:CreateTab("Brookhaven", nil)
+
+local Button = BrTab:CreateButton({
+   Name = "SkyHub",
+   Callback = function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Sky-Hub-18710"))()
+   end,
+})
+
+local Button = BrTab:CreateButton({
+   Name = "R4D Hub",
+   Callback = function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Brookhaven-RP-R4D-Script-By-M1zz-11757"))()
+   end,
+})
+
+local Button = BrTab:CreateButton({
+   Name = "Rochips Panel",
+   Callback = function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Rochips-panel-20110"))()
+   end,
+})
+
+local Button = BrTab:CreateButton({
+   Name = "SkyHub",
+   Callback = function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Sky-Hub-18710"))()
+   end,
+})
+
+
+local TROLLTab = Window:CreateTab("Raid Scripts", nil)
+
+local Label = TROLLTab:CreateLabel("Check brookhaven tab if you raid brookhaven!!!", "rewind")
+
+local Button = TROLLTab:CreateButton({
+   Name = "Noclip",
+   Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/0ehiARUn"))()
+   end,
+})
+
+local Button = TROLLTab:CreateButton({
+   Name = "Vfly",
+   Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/BFzqVkQX"))()
+   end,
+})
+
+
 

@@ -27,7 +27,7 @@ local Window = Rayfield:CreateWindow({
 })
 
 local ABOUTTab = Window:CreateTab("Home", nil) -- Title, Image
-local ABOUTSection = MainTab:CreateSection("About script")
+local ABOUTSection = ABOUTTab:CreateSection("About script")
 
 Rayfield:Notify({
    Title = "Script Executed!",
@@ -47,6 +47,7 @@ Rayfield:Notify({
 local Label = ABOUTTab:CreateLabel("SCRIPT IS ON BETA AND CLOSED!!!", "rewind")
 
 local MainTab = Window:CreateTab("Character", nil)
+local MainSection = MainTab:CreateSection("Character")
 
 
 local Slider = MainTab:CreateSlider({
@@ -74,6 +75,7 @@ local Slider = MainTab:CreateSlider({
 })
 
 local AdminTab = Window:CreateTab("Admin Scripts and More", nil)
+local AdminSection = MainTab:CreateSection("Admin Scripts and More")
 
 local Button = AdminTab:CreateButton({
    Name = "Infinite Yield",
@@ -97,6 +99,7 @@ loadstring(game:HttpGet("https://pastebin.com/raw/sAVghM5x"))()
 })
 
 local OtherTab = Window:CreateTab("Universal Cool Scripts", nil)
+local OtherSection = OtherTab:CreateSection("Universal Cool Scripts")
 
 local Button = OtherTab:CreateButton({
    Name = "Chat Spy",
@@ -127,6 +130,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifv
 })
 
 local BrTab = Window:CreateTab("Brookhaven", nil)
+local BrSection = BrTab:CreateSection("Brookhaven")
 
 local Button = BrTab:CreateButton({
    Name = "SkyHub",
@@ -158,6 +162,8 @@ loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Sky-Hub-187
 
 
 local TROLLTab = Window:CreateTab("Raid Scripts", nil)
+local TROLLSection = TROLLTab:CreateSection("Raid Scripts")
+
 
 local Label = TROLLTab:CreateLabel("Check brookhaven tab if you raid brookhaven!!!", "rewind")
 
@@ -174,6 +180,8 @@ local Button = TROLLTab:CreateButton({
 loadstring(game:HttpGet("https://pastebin.com/raw/BFzqVkQX"))()
    end,
 })
+
+local Label = TROLLTab:CreateLabel("Soon new update...", "rewind")
 
 
 

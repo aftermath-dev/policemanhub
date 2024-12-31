@@ -1,7 +1,7 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "Policeman Hub 1.1 | 🎄HAPPY NEW YEAR",
+   Name = "AntiOder Hub 1.1 | 🎄HAPPY NEW YEAR",
    LoadingTitle = "waiting the script loading",
    LoadingSubtitle = "by aftr.lua",
    ConfigurationSaving = {

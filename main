@@ -133,50 +133,14 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifv
 local Button = OtherTab:CreateButton({
    Name = "FPS Booster",
    Callback = function()
--- Made by RIP#6666
-_G.Settings = {
-    Players = {
-        ["Ignore Me"] = true, -- Ignore your Character
-        ["Ignore Others"] = true -- Ignore other Characters
-    },
-    Meshes = {
-        Destroy = false, -- Destroy Meshes
-        LowDetail = true -- Low detail meshes (NOT SURE IT DOES ANYTHING)
-    },
-    Images = {
-        Invisible = true, -- Invisible Images
-        LowDetail = false, -- Low detail images (NOT SURE IT DOES ANYTHING)
-        Destroy = false, -- Destroy Images
-    },
-    ["No Particles"] = true, -- Disables all ParticleEmitter, Trail, Smoke, Fire and Sparkles
-    ["No Camera Effects"] = true, -- Disables all PostEffect's (Camera/Lighting Effects)
-    ["No Explosions"] = true, -- Makes Explosion's invisible
-    ["No Clothes"] = true, -- Removes Clothing from the game
-    ["Low Water Graphics"] = true, -- Removes Water Quality
-    ["No Shadows"] = true, -- Remove Shadows
-    ["Low Rendering"] = true, -- Lower Rendering
-    ["Low Quality Parts"] = true -- Lower quality parts
-}
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/FPSBooster.lua"))()
+loadstring(game:HttpGet("https://pastebin.com/raw/gvUFpwQw"))()
    end,
 })
 
 local Button = OtherTab:CreateButton({
    Name = "Stretched Resolution (растяг экрана)",
    Callback = function()
-getgenv().Resolution = {
-    [".gg/scripters"] = 0.65
-}
-
-local Camera = workspace.CurrentCamera
-if getgenv().gg_scripters == nil then
-    game:GetService("RunService").RenderStepped:Connect(
-        function()
-            Camera.CFrame = Camera.CFrame * CFrame.new(0, 0, 0, 1, 0, 0, 0, getgenv().Resolution[".gg/scripters"], 0, 0, 0, 1)
-        end
-    )
-end
-getgenv().gg_scripters = "Aori0001"
+loadstring(game:HttpGet("https://pastebin.com/raw/HWD8dq9z"))()
    end,
 })
 
@@ -359,24 +323,7 @@ local ServerSection = ServerTab:CreateSection("Server Scripts")
 local Button = ServerTab:CreateButton({
    Name = "Hop to smallest server",
    Callback = function()
-local Http = game:GetService("HttpService")
-local TPS = game:GetService("TeleportService")
-local Api = "https://games.roblox.com/v1/games/"
-
-local _place = game.PlaceId
-local _servers = Api.._place.."/servers/Public?sortOrder=Asc&limit=100"
-function ListServers(cursor)
-  local Raw = game:HttpGet(_servers .. ((cursor and "&cursor="..cursor) or ""))
-  return Http:JSONDecode(Raw)
-end
-
-local Server, Next; repeat
-  local Servers = ListServers(Next)
-  Server = Servers.data[1]
-  Next = Servers.nextPageCursor
-until Server
-
-TPS:TeleportToPlaceInstance(_place,Server.id,game.Players.LocalPlayer)
+loadstring(game:HttpGet("https://pastebin.com/raw/n1hPD0KN"))()
    end,
 })
 
